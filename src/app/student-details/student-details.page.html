@@ -1,0 +1,36 @@
+<ion-header>  
+  <ion-toolbar color="primary">  
+    <ion-buttons slot="start">  
+      <ion-back-button defaultHref="/"></ion-back-button>  
+    </ion-buttons>  
+    <ion-title>{{ studentDetailes?.name }}</ion-title>  
+  </ion-toolbar>  
+</ion-header>  
+
+<ion-content padding>  
+   
+  <ion-card>  
+    <ion-card-header>  
+          
+      <ion-card-title>  
+          <ion-icon name="man"></ion-icon>  
+        {{ studentDetailes?.name }}  
+      </ion-card-title>  
+      <ion-card-subtitle class="subtitle">  
+        {{ studentDetailes?.address }}  - {{ studentDetailes?.email }} 
+      </ion-card-subtitle>  
+    </ion-card-header>  
+
+  </ion-card>  
+  
+  <ion-toolbar color="primary">   
+    <ion-title>My Courses</ion-title>  
+  </ion-toolbar>  
+
+  <ion-item button *ngFor="let item of studentDetailes?.studentCourses">    
+    <ion-label text-wrap>  
+      <h3>{{ item.course.code }} - {{ item.course.name }} </h3>  
+    </ion-label>  
+  </ion-item>  
+
+</ion-content>
